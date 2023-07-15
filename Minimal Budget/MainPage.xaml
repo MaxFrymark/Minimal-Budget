@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Minimal_Budget.MainPage">
+
+    <Grid>
+        
+        <VerticalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="$500.00"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+
+        <ScrollView BackgroundColor="LightGoldenrodYellow">
+        
+            <VerticalStackLayout
+                Spacing="25"
+                Padding="30,0"
+                VerticalOptions="Center">
+                <HorizontalStackLayout>
+                    <Label Text="7/16/23"/>
+                    <Label Text="$100.00"/>
+                    <Label Text="Notes here"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout>
+                    <Label Text="7/16/23"/>
+                    <Label Text="$100.00"/>
+                    <Label Text="Notes here"/>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+        <VerticalStackLayout>
+            <HorizontalStackLayout
+                Spacing="25">
+                <Button>
+                    
+                </Button>
+                <ImageButton BackgroundColor="LightGreen" BorderWidth="3" BorderColor="Green">
+                
+                </ImageButton>
+                <Button>
+                    
+                </Button>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
