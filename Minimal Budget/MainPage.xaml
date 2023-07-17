@@ -1,38 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:minimalBudget="clr-namespace:Minimal_Budget"
              x:Class="Minimal_Budget.MainPage">
 
-    <Grid>
-        
-        <VerticalStackLayout>
-            <HorizontalStackLayout>
-                <Label Text="$500.00"/>
-            </HorizontalStackLayout>
-        </VerticalStackLayout>
+    <VerticalStackLayout BackgroundColor="LightGoldenrodYellow">
+
+        <HorizontalStackLayout>
+            <Label Text="$200.00" FontSize="32"/>
+            <Label Text="/$500.00" FontSize="12"/>
+        </HorizontalStackLayout>
 
 
-        <ScrollView BackgroundColor="LightGoldenrodYellow">
-        
-            <VerticalStackLayout
-                Spacing="25"
-                Padding="30,0"
-                VerticalOptions="Center">
-                <HorizontalStackLayout>
-                    <Label Text="7/16/23"/>
-                    <Label Text="$100.00"/>
-                    <Label Text="Notes here"/>
-                </HorizontalStackLayout>
-
-                <HorizontalStackLayout>
-                    <Label Text="7/16/23"/>
-                    <Label Text="$100.00"/>
-                    <Label Text="Notes here"/>
-                </HorizontalStackLayout>
-
-            </VerticalStackLayout>
-
-        </ScrollView>
+        <CollectionView HeightRequest="650">
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type minimalBudget:BudgetLine}">
+                    <minimalBudget:BudgetLine Date="7/15/2023" Amount="$100.00" Notes="Hi"/>
+                    <minimalBudget:BudgetLine Date="7/16/2023" Amount="$150.00" Notes="Meow"/>
+                    <minimalBudget:BudgetLine Date="7/17/2023" Amount="$50.00" Notes="Notes Here"/>
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="minimalBudget:BudgetLine">
+                    <HorizontalStackLayout>
+                        <Label Text="{Binding Date}"/>
+                        <Label Text="{Binding Amount}"/>
+                        <Label Text="{Binding Notes}"/>
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
         <VerticalStackLayout>
             <HorizontalStackLayout
@@ -40,13 +37,13 @@
                 <Button>
                     
                 </Button>
-                <ImageButton BackgroundColor="LightGreen" BorderWidth="3" BorderColor="Green">
-                
-                </ImageButton>
+                <Button BackgroundColor="LightGreen" Text="+">
+                    
+                </Button>
                 <Button>
                     
                 </Button>
             </HorizontalStackLayout>
         </VerticalStackLayout>
-    </Grid>
+    </VerticalStackLayout>
 </ContentPage>
