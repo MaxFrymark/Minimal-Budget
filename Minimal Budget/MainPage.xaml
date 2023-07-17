@@ -35,15 +35,17 @@
             <HorizontalStackLayout
                 Spacing="25">
                 <Button>
-                    
+
                 </Button>
                 <Button BackgroundColor="LightGreen" Text="+">
-                    
+            
                 </Button>
                 <Button>
-                    
+
                 </Button>
             </HorizontalStackLayout>
         </VerticalStackLayout>
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
 </ContentPage>
